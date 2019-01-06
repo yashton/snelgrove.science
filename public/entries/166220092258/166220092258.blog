@@ -4,9 +4,11 @@
       "url": "/entries/166220092258/166220092258.jpg"
     }
   ],
-  "tags": [],
   "posted": "2017-10-09T09:57:49",
   "body": "<p>Brewing cider and making applesauce.</p>",
-  "slug": "brewing-cider-and-making-applesauce",
-  "objectID": "166220092258"
+  "posted_month": "2017-10-09",
+  "objectID": "166220092258",
+  "tags": ["garden", "brewing"],
+  "title": "Brewing cider and making applesauce",
+  "posted_timestamp": 1507564669
 }

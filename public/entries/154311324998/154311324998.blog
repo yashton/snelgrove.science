@@ -4,9 +4,11 @@
       "url": "/entries/154311324998/154311324998.jpg"
     }
   ],
-  "tags": [],
   "posted": "2016-12-10T19:00:27",
+  "title": "Workshop build",
   "body": "<p>My workshop. Garish paint courtesy the 1960\u2019s.</p>",
-  "slug": "my-workshop-garish-paint-courtesy-the-1960s",
-  "objectID": "154311324998"
+  "posted_month": "2016-12-10",
+  "objectID": "154311324998",
+  "tags": ["woodworking"],
+  "posted_timestamp": 1481421627
 }

@@ -2,20 +2,25 @@
   "photos": [
     {
       "url": "/entries/163512090443/163512090443_0.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/163512090443/163512090443_1.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/163512090443/163512090443_2.jpg",
-      "caption": "",
+      "caption": ""
     }
   ],
-  "tags": [],
   "posted": "2017-07-27T22:15:37",
   "body": "<p>First panel for our flamenco floor. 4 feet square. I used oak flooring from the ReStore\u2026 as actual flooring.</p>",
-  "slug": "first-panel-for-our-flamenco-floor-4-feet-square",
-  "objectID": "163512090443"
+  "title": "Flamenco practice floor",
+  "posted_month": "2017-07-27",
+  "objectID": "163512090443",
+  "tags": [
+    "woodworking",
+    "flamenco"
+  ],
+  "posted_timestamp": 1501215337
 }

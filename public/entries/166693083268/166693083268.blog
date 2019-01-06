@@ -2,20 +2,22 @@
   "photos": [
     {
       "url": "/entries/166693083268/166693083268_0.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/166693083268/166693083268_1.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/166693083268/166693083268_2.jpg",
-      "caption": "",
+      "caption": ""
     }
   ],
-  "tags": [],
   "posted": "2017-10-22T19:20:11",
+  "title": "5.1 surround sound routing box.",
   "body": "<p>5.1 surround sound routing box. Supports five sources, with individual volume control for each channel, as well as a stereo fallback mode which mirrors the front and rear speakers.</p>",
-  "slug": "51-surround-sound-routing-box-supports-five",
-  "objectID": "166693083268"
+  "posted_month": "2017-10-22",
+  "objectID": "166693083268",
+  "tags": ["electronics"],
+  "posted_timestamp": 1508721611
 }

@@ -4,9 +4,15 @@
       "url": "/entries/155662414841/155662414841.jpg"
     }
   ],
-  "tags": [],
   "posted": "2017-01-10T00:00:44",
   "body": "<p>This is the first effects pedal I made. It is a clone of the Ibanez Tube Screamer. while I made no real modifications to the circuit, it has proved a reliable and nice sounding pedal.</p>",
-  "slug": "this-is-the-first-effects-pedal-i-made-it-is-a",
-  "objectID": "155662414841"
+  "posted_month": "2017-01-10",
+  "objectID": "155662414841",
+  "title": "Ibanez Tube Screamer clone",
+  "tags": [
+    "effects pedal",
+    "electronics",
+    "guitar"
+  ],
+  "posted_timestamp": 1484031644
 }

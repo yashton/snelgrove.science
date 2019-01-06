@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { EntryComp } from './Entry';
+import moment from 'moment';
 import {
+  NumericMenu,
   InstantSearch,
   Hits,
   SearchBox,
+  Menu,
   Pagination,
   Highlight,
   ClearRefinements,
@@ -24,7 +27,13 @@ class App extends Component {
           <div style={{border:"1px solid green"}}>
             <ClearRefinements />
             <h2>Tags</h2>
-            <RefinementList attribute="tags" />
+            <Menu attribute="tags" />
+            <Menu attribute="posted_month"
+                  transformItems={items =>
+                                  (items.map(item => ({
+                                    ...item,
+                                    label: moment(item.label).format("MMMM YYYY")
+                                  })))} />
             <Configure hitsPerPage={8} />
           </div>
           <div className="right-panel">

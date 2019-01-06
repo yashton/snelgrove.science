@@ -2,32 +2,37 @@
   "photos": [
     {
       "url": "/entries/155472401444/155472401444_0.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155472401444/155472401444_1.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155472401444/155472401444_2.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155472401444/155472401444_3.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155472401444/155472401444_4.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155472401444/155472401444_5.jpg",
-      "caption": "",
+      "caption": ""
     }
   ],
-  "tags": [],
   "posted": "2017-01-06T00:00:56",
   "body": "<p>This is an absinthe fountain I made for Miranda for Christmas. Apparently you are supposed to drip water over sugar cubes into the absinthe until the color changes to a opaque light green.</p>\n\n<p>The base is made from douglas fir 2x6. The center is two lengths joined together. The top has an additional two layers to make the square for the bowl. The bottom has two sets of 3 inch side blocks along the center, and three layers on each side of joined lengths to provide the wide base.</p>\n\n<p>The rough blank prep and glue up took several weeks, interrupted somewhat by a businees trip. The turning itself took one evening, and the sanding another evening.</p>\n\n<p>Douglas fir cuts well along the grain - across the grain the fibers are very strong and tend to drag and bend. Even with a sharp tool, the surface still is prone to chipping, which required a bit of sanding.</p>\n\n<p>The water vessel is a glass vase or something I found at the thrift store. I purchased the two spigots: they are pretty heavy duty ball valves. I was able to drill the glass with diamond grit bores on the drill press with some difficulty. The bits I purchased where 12mm, which was the diameter advertised as being compatible with the spigot. The spigot ended up being closer to 16mm, so I had to drill four closely spaced holes in a squarish configuration to make a large opening. The gaskets sealed quite nicely.</p>\n\n<p>The finish was a large number of coats of polyurethane directly on the wood. I wanted a very light white finish. The finish also needed to strongly seal the wood to prevent any problems from drips or spills.</p>",
-  "slug": "this-is-an-absinthe-fountain-i-made-for-miranda",
-  "objectID": "155472401444"
+  "posted_month": "2017-01-06",
+  "objectID": "155472401444",
+  "title": "Absinthe fountain",
+  "tags": [
+    "woodworking",
+    "lathe"
+  ],
+  "posted_timestamp": 1483686056
 }

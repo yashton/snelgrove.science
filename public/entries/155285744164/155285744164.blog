@@ -2,20 +2,25 @@
   "photos": [
     {
       "url": "/entries/155285744164/155285744164_0.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155285744164/155285744164_1.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/155285744164/155285744164_2.jpg",
-      "caption": "",
+      "caption": ""
     }
   ],
-  "tags": [],
   "posted": "2017-01-02T00:00:58",
   "body": "<p>This is a Stanley \u201cLiberty Bell\u201d No. 127 hand plane. Miranda had the good fortune to find this at the thrift store for $10.</p>\n\n<p>Matching up against some information found <a href=\"http://www.richmondantiquetools.com/liby%20bell%20type%20study%20_2_.pdf\">here</a> this matches the description of a Type 2, made between 1892 to 1899.</p>\n\n<p>The plane is in excellent condition, and all parts appear original. The handle is present but in pieces. I carved a new handle from oak. While it doesn\u2019t match the original beech, it quite functional. After a tuneup and sharpening, it cuts beautifully. At 15 inches in length, this makes a pretty decent joining plane.</p>",
-  "slug": "this-is-a-stanley-liberty-bell-no-127-hand",
-  "objectID": "155285744164"
+  "title": "Antique Stanley \u201cLiberty Bell\u201c hand plane",
+  "posted_month": "2017-01-02",
+  "objectID": "155285744164",
+  "tags": [
+    "woodworking",
+    "tools"
+  ],
+  "posted_timestamp": 1483340458
 }

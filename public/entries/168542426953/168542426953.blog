@@ -2,16 +2,18 @@
   "photos": [
     {
       "url": "/entries/168542426953/168542426953_0.jpg",
-      "caption": "",
+      "caption": ""
     },
     {
       "url": "/entries/168542426953/168542426953_1.jpg",
-      "caption": "",
+      "caption": ""
     }
   ],
-  "tags": [],
+  "title": "Progress update for modular guitar amplifier",
   "posted": "2017-12-14T11:04:53",
   "body": "<p>Progress update for the modular guitar amplifier.\nI\u2019ve finished the power supply. It rectifies a center tap transformer and feeds that into +5, +9, +15, -9, and -15 voltage regulators. Each backplane connector is wired with all five supplies. I\u2019ve only wired up the switching connector and three module slots - I need to get more connectors. Next step is wiring up the signal lines.\nI set up the front panel with a master output level and input jack. There are two power switches - a master switch for the main module supply, and a secondary power supply switch for the planned power amplifier section slaved into the master.</p>",
-  "slug": "progress-update-for-the-modular-guitar",
-  "objectID": "168542426953"
+  "posted_month": "2017-12-14",
+  "objectID": "168542426953",
+  "tags": ["modular amplifier", "electronics", "guitar"],
+  "posted_timestamp": 1513274693
 }
