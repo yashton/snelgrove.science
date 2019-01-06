@@ -1,0 +1,3 @@
+[submodule "Metropolis"]
+	path = Metropolis
+	url = git@github.com:chrismsimpson/Metropolis.git

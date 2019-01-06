@@ -27,6 +27,7 @@ const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
 const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
+const glob = require('glob');
 
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
@@ -66,6 +67,8 @@ checkBrowsers(paths.appPath, isInteractive)
     fs.emptyDirSync(paths.appBuild);
     // Merge with the public folder
     copyPublicFolder();
+    copyFonts();
+    generateEntries();
     // Start the webpack build
     return build(previousFileSizes);
   })
@@ -191,10 +194,13 @@ function copyPublicFolder() {
   });
 }
 
-const fs = require('fs');
-const glob = require('glob');
+function copyFonts() {
+  fs.copySync(paths.appFonts, paths.appBuildFonts);
+}
 
-glob('public/entries/**/*.blog', (error, files) => {
-  const output = files.map((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
-  fs.writeFileSync('build/entries.json', JSON.stringify(output));
-});
+function generateEntries() {
+  glob('public/entries/**/*.blog', (error, files) => {
+    const output = files.map((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
+    fs.writeFileSync('build/entries.json', JSON.stringify(output));
+  });
+}
