@@ -1,0 +1,12 @@
+{
+  "photos": [
+    {
+      "url": "/entries/155886253841/155886253841.jpg"
+    }
+  ],
+  "tags": [],
+  "posted": "2017-01-15T00:00:54",
+  "body": "<p>This is my phaser pedal. The design is quite unique. The phase filter stages are based off the MXR Phase 90. This design uses four stages. The input/output and regenerative circuit is based on the Boss PH-1. The oscillator started out life as the design from the Phase 90, but eventually evolved into something different. I tried to use 5457 JFETs for the phase stages, but was unable to get the oscillator into the active resistance range of the FET. The oscillator was changed in response to this problem to work in an acceptable range to match the JFETs. In addition to the changes necessary to get the oscillator in the appropriate range, I added in two additional controls. The depth control adjusts the amplitude of the oscillator to vary the depth of the filter sweep range. The range control adjusts the bias of the oscillator, which adjusts the base frequency the filter is sweeping across. This allows a wide range of tonal options.</p>",
+  "slug": "this-is-my-phaser-pedal-the-design-is-quite",
+  "objectID": "155886253841"
+}

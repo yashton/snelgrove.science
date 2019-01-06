@@ -1,0 +1,12 @@
+{
+  "photos": [
+    {
+      "url": "/entries/158058381013/158058381013.jpg"
+    }
+  ],
+  "tags": [],
+  "posted": "2017-03-05T23:44:42",
+  "body": "<p>I made new knobs for my Roland Blues Cube. The old plastic ones where lame and missing their tops. These are machined out of aluminum and knurled on the outside. I was able to get the technique repeatable enough that a knob would take about 15 minutes to turn.</p>\n\n<p>My small bench lathe does make tool changes difficult - I have to remove the tailstock to change the drill bits, and there is only room for two tools on the post while using the center. Using a center to support the piece once I had drilled made a big difference as far as stability of plunge cuts with the form tool and the parting tool.</p>\n\n<p>I was able to make a new form cutting tool based off my experience with my previous tools I ground. I found that when plunge cutting with a form tool or a parting tool, the tool would often catch, jamming the piece out of the  chuck. Getting the tool clearances correct is very important when grinding. The rounded edge is tricky to grind - I use a dremel rotary tool by hand. Grinding the end of the plunge tool after using the dremel ensures a clean, perpendicular edge. The next important thing was getting the part off and form tools perpendicular to the axis of rotation, so that the tool is going straight in and not rubbing on the sides. I used my dial indicator to measure the variance over the range of the crossfeed, and adjust the tool to be parallel. This calibration was time consuming, but I was able to mount both tools permanently in the tool post so that tool changes did not disrupt the alignment.</p>\n\n<p>As I practice, I\u2019m starting to get a better feel for the feeds and speeds. Some research showed that I was trying to turn at a bit faster speed than was appropriate for aluminum. Reducing the speed and getting the feed right make a big difference. There\u2019s definitely a lot of awareness of feel that develops. Modern CNC machines can adjust the feed rate and rotation to get the right linear speed through the entire cut, but it requires a lot of practice to do this manually.</p>",
+  "slug": "i-made-new-knobs-for-my-roland-blues-cube-the-old",
+  "objectID": "158058381013"
+}

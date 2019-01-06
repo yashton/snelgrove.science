@@ -1,0 +1,12 @@
+{
+  "photos": [
+    {
+      "url": "/entries/154941155268/154941155268.jpg"
+    }
+  ],
+  "tags": [],
+  "posted": "2016-12-25T10:32:25",
+  "body": "<p>This is my Wampler \u201865 overdrive clone. Using the 5457 jfet does not provide enough gain at 9 volts to get a really saturated overdrive. J201 jfets provide a higher gain. Running a much higher voltage would give a larger operating range for the transistor.</p>",
+  "slug": "this-is-my-wampler-65-overdrive-clone-using-the",
+  "objectID": "154941155268"
+}

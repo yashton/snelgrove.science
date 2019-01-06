@@ -1,0 +1,41 @@
+{
+  "photos": [
+    {
+      "url": "/entries/154430091602/154430091602_0.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_1.jpg",
+      "caption": "Pilar like to explore inside.",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_2.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_3.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_4.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_5.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_6.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154430091602/154430091602_7.jpg",
+      "caption": "",
+    }
+  ],
+  "tags": [],
+  "posted": "2016-12-13T12:01:08",
+  "body": "<p>This is a Hammond T-400 series tonewheel organ. The organ was in fairly good condition, but required some restoration. The spring reverb needed replacing, and the vibrato drum was seized up. One of the keys had a broken spring mount that required disassembly and a little super glue. Many of the components required a tuneup, and the whole thing was filthy with dust. Once everything was restored to working order, I made some modifications to the circuit to get a close sound to a traditional B3 based off of information <a href=\"http://www.keyboardpartner.de/hammond/t-modifications.htm\">here</a>. I also added in a send/receive loop between the output of the tone circuit and the power amplifier. Sending the signal into my Orange amp sounds great.</p>",
+  "slug": "this-is-a-hammond-t-400-series-tonewheel-organ",
+  "objectID": "154430091602"
+}

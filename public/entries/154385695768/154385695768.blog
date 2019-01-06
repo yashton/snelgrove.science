@@ -1,0 +1,29 @@
+{
+  "photos": [
+    {
+      "url": "/entries/154385695768/154385695768_0.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154385695768/154385695768_1.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154385695768/154385695768_2.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154385695768/154385695768_3.jpg",
+      "caption": "",
+    },
+    {
+      "url": "/entries/154385695768/154385695768_4.jpg",
+      "caption": "",
+    }
+  ],
+  "tags": [],
+  "posted": "2016-12-12T12:01:21",
+  "body": "<p>This is a Mu-tron III style envelope filter. The circuit is based around a state variable filter. The circuit has some novel variations of the basic filter. There is a send-receive loop so the envelope can be extracted and the filter applied further down the signal chain. The filter can be toggled between three frequency ranges. The attack and decay responses are independently adjustable. The output is mixable between the wet and dry signals. Finally, the filter can be switched from envelope control to an expression pedal to allow use as a pedal wah</p>",
+  "slug": "this-is-a-mu-tron-iii-style-envelope-filter-the",
+  "objectID": "154385695768"
+}
