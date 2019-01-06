@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { EntryComp } from './Entry';
+import { EntryComp } from './EntryComp';
 
 class EntryList extends React.Component {
   constructor(props) {

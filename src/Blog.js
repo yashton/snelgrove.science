@@ -13,7 +13,6 @@ const Blog = (props) => (
       <Route path="/search" component={Search}/>
       <Route component={EntryList}/>
     </Switch>
-    <Navigation/>
   </Fragment>);
 
 export default Blog
