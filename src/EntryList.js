@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Entry from './Entry';
+import { EntryComp } from './Entry';
 
 class EntryList extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class EntryList extends React.Component {
   async componentDidMount() {
     try {
       this.setState((s) => ({ ...s, loading: s.loading + 1 }));
-      const { data } = await axios.get('/entries/index.json',
+      const { data } = await axios.get('/entries.json',
                                        { cancelToken: this.cancel.token });
       this.setState((s) => ({ ...s, loading: s.loading - 1, entries: data }));
     } catch (e) {
@@ -33,7 +33,7 @@ class EntryList extends React.Component {
     if (loading) return null;
     return (
       <main>
-        {entries.map(e => <Entry key={e} entry={e}/>)}
+        {entries.map(e => <EntryComp key={e} entry={e}/>)}
       </main>
     );
   }

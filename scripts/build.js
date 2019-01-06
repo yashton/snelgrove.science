@@ -190,3 +190,11 @@ function copyPublicFolder() {
     filter: file => file !== paths.appHtml,
   });
 }
+
+const fs = require('fs');
+const glob = require('glob');
+
+glob('public/entries/**/*.blog', (error, files) => {
+  const output = files.map((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
+  fs.writeFileSync('build/entries.json', JSON.stringify(output));
+});

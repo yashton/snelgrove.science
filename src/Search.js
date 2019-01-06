@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { EntryComp } from './Entry';
 import moment from 'moment';
 import {
-  NumericMenu,
   InstantSearch,
   Hits,
   SearchBox,
@@ -10,11 +9,10 @@ import {
   Pagination,
   Highlight,
   ClearRefinements,
-  RefinementList,
   Configure,
 } from 'react-instantsearch-dom';
 
-class App extends Component {
+class Search extends Component {
   render() {
     return (
       <div>
@@ -28,12 +26,14 @@ class App extends Component {
             <ClearRefinements />
             <h2>Tags</h2>
             <Menu attribute="tags" />
+            <h2>Posted</h2>
             <Menu attribute="posted_month"
-                  transformItems={items =>
-                                  (items.map(item => ({
-                                    ...item,
-                                    label: moment(item.label).format("MMMM YYYY")
-                                  })))} />
+                  transformItems={
+                    items => (items.map(
+                      item => ({
+                        ...item,
+                        label: moment(item.label).format("MMMM YYYY")
+                      })))} />
             <Configure hitsPerPage={8} />
           </div>
           <div className="right-panel">
@@ -59,4 +59,4 @@ const Hit = (props) => (
   </div>
 );
 
-export default App;
+export default Search;
