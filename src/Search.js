@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { EntryComp } from './EntryComp';
 import moment from 'moment';
+import styled from 'styled-components';
+import { Nav } from './Navigation';
+import { ReactComponent as Logo } from './logo.svg';
+
 import {
   InstantSearch,
   Hits,
   SearchBox,
   Menu,
   Pagination,
-  Highlight,
   ClearRefinements,
   Configure,
 } from 'react-instantsearch-dom';
@@ -26,8 +29,10 @@ class Search extends Component {
         appId="FBUJNN23U4"
         apiKey="36aafccbdf557d9165097ac728ecedc4"
         indexName="ashton.snelgrove.science">
-        <div style={{display: "flex"}}>
-          <nav>
+        <div style={{display:"flex"}}>
+          <Nav>
+            <Logo />
+            <h1 style={{whiteSpace:"no-wrap"}} >Ashton's Projects</h1>
             <SearchBox />
             <ClearRefinements />
             <div>
@@ -39,7 +44,7 @@ class Search extends Component {
               <Menu attribute="posted_month" transformItems={monthLabels}/>
             </div>
             <Configure hitsPerPage={8} />
-          </nav>
+          </Nav>
           <main>
             <Hits hitComponent={Hit} />
             <Pagination />

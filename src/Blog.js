@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Navigation from './Navigation';
 import EntryList from './EntryList';
 import Entry from './Entry';
 import Search from './Search';

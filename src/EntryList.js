@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 import { EntryComp } from './EntryComp';
+import Navigation from './Navigation';
+import styled from 'styled-components';
+
+const Contents = styled.div`
+  display: flex;
+  margin: 1em;
+`;
 
 class EntryList extends React.Component {
   constructor(props) {
@@ -30,11 +37,17 @@ class EntryList extends React.Component {
 
   render() {
     const {loading, entries} = this.state;
+    const sorted = [...entries].sort((a, b) => -a.posted.localeCompare(b.posted));
     if (loading) return null;
     return (
-      <main>
-        {entries.map(e => <EntryComp key={e} entry={e}/>)}
-      </main>
+      <Fragment>
+      <Contents>
+        <Navigation entries={entries}/>
+        <main>
+          {sorted.map(e => <EntryComp key={e.objectID} entry={e}/>)}
+        </main>
+      </Contents>
+      </Fragment>
     );
   }
 }

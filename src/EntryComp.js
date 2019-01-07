@@ -12,10 +12,12 @@ const EntryHeader = styled.h2`
 `;
 
 const EntryArticle = styled.article`
-  border: 1px solid black;
+  border: 1px solid #00000070;
   border-radius: 4px;
   padding: 1em;
-  margin: 2em;
+  margin-bottom: 2em;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 
 const Photoset = styled.div`
@@ -33,7 +35,7 @@ const TagSet = styled.ul`
 const Tag = styled.li`
   display: inline;
   border-radius: 4px;
-  background-color: lightslategrey;
+  background-color: #cc97f6;
   color: white;
   padding: 0.2em 0.4em;
   margin: 0em 0.1em;
@@ -44,8 +46,8 @@ const PostedStyle = styled.time`
   display: block;
 `;
 
-const Posted = ({posted}) =>
-      (<PostedStyle dateTime={posted}>{moment(posted).format("LLL")}</PostedStyle>);
+const Posted = ({datetime}) =>
+      (<PostedStyle dateTime={datetime}>{moment(datetime).format("LLL")}</PostedStyle>);
 
 export const EntryComp = ({entry}) => (
   <EntryArticle>
