@@ -59,7 +59,6 @@ const Navigation = ({entries}) => (
     <ul>
       {collectPosted(entries).map(t => <li key={t}>{t}</li>)}
     </ul>
-
   </Nav>
 );
 
