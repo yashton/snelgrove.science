@@ -22,9 +22,6 @@ const Main = styled.main`
 
 const Navigation = styled(BaseNavigation)`
   width: 16em;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 1em;
 `;
 
 class Blog extends React.Component {
