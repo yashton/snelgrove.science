@@ -97,6 +97,10 @@ const Navigation = ({entries, className}) => (
     <SearchList>
       {posted(entries)}
     </SearchList>
+    <hr/>
+    <a href="https://www.linkedin.com/in/ashtonsnelgrove/">LinkedIn</a>
+    <a href="https://www.snelgrove.family/">Snelgrove Family Blogs</a>
+
   </Nav>
 );
 

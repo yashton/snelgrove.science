@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import axios from 'axios';
-import { default as BaseEntry } from './Entry';
 import moment from 'moment';
 import { default as BaseNavigation } from './Navigation';
 import styled from 'styled-components';
 import { compose } from 'recompose';
 import { Route, Switch } from 'react-router-dom';
+import Entries from './Entries';
 
 const incrementLoading = (s) => ({ ...s, loading: s.loading + 1 });
 const decrementLoading = (s) => ({ ...s, loading: s.loading - 1 });
@@ -25,10 +25,6 @@ const Navigation = styled(BaseNavigation)`
   position: -webkit-sticky;
   position: sticky;
   top: 1em;
-`;
-
-const Entry = styled(BaseEntry)`
-width: 40em;
 `;
 
 class Blog extends React.Component {
@@ -75,8 +71,8 @@ class Blog extends React.Component {
               render={({location: { search }}) =>
                       (<Entries entries={entries} filter={parse(search)}/>)}/>
             <Route
-                render={({location: { search }}) =>
-                        (<Entries entries={entries} filter={()=>true}/>)}/>
+              render={({location: { search }}) =>
+                      (<Entries entries={entries} filter={()=>true}/>)}/>
           </Switch>
         </Main>
       </Contents>
@@ -101,14 +97,5 @@ const parse = search => {
 };
 
 const single = id => entry => id === entry.objectID;
-
-const Entries = ({filter, entries}) => {
-  const sort = (a, b) => -a.posted.localeCompare(b.posted);
-  return (
-    <Fragment>
-      {[...entries].filter(filter).sort(sort).map(e => <Entry key={e.objectID} entry={e}/>)}
-    </Fragment>
-  );
-};
 
 export default Blog;
