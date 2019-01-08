@@ -22,6 +22,9 @@ const Main = styled.main`
 
 const Navigation = styled(BaseNavigation)`
   width: 16em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4em;
 `;
 
 const Entry = styled(BaseEntry)`
@@ -72,9 +75,8 @@ class Blog extends React.Component {
               render={({location: { search }}) =>
                       (<Entries entries={entries} filter={parse(search)}/>)}/>
             <Route
-              path="/"
-              render={({location: { search }}) =>
-                      (<Entries entries={entries} filter={parse(search)}/>)}/>
+                render={({location: { search }}) =>
+                        (<Entries entries={entries} filter={()=>true}/>)}/>
           </Switch>
         </Main>
       </Contents>
