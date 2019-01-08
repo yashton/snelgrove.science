@@ -5,8 +5,15 @@ import styled from 'styled-components';
 import Card from './Card';
 import Tag from './Tag';
 
+const Contents = styled.div`
+  padding: 0.5em 2.5em 2.5em 2.5em;
+`;
 const EntryHeader = styled.h2`
   margin: 0em;
+
+background-color: #cc97f6;
+color: white;
+padding: 1em 1em 1em 2em;
   a {
     text-decoration: none;
     color: inherit;
@@ -17,8 +24,8 @@ const Photo = styled.img`
 `;
 
 const Photoset = styled.div`
-display: flex;
-flex-wrap wrap;
+  display: flex;
+  flex-wrap wrap;
 `;
 
 const TagSet = styled.ul`
@@ -30,11 +37,10 @@ const TagSet = styled.ul`
 const PostedStyle = styled.time`
   margin: 0.5em 0em;
   display: block;
+  font-style: italic;
 `;
 
 const Body = styled.div`
-  max-height: 100em;
-  text-overflow: ellipsis;
 `;
 
 const Posted = ({datetime}) =>
@@ -47,16 +53,22 @@ const Entry = ({entry, className}) => (
         {entry.title || "MISSING"}
       </Link>
     </EntryHeader>
-    <Body>
-      <div dangerouslySetInnerHTML={{__html: entry.body}}/>
-    </Body>
-    <Photoset>
-      {entry.photos && entry.photos.map(({caption, url}) => (
-        <Photo key={url} alt={caption} src={url}/>
-      ))}
-    </Photoset>
-    <TagSet>{entry.tags && entry.tags.map(tag => (<Tag as="li" key={tag}>{tag}</Tag>))}</TagSet>
-    <Posted datetime={entry.posted} />
+
+    <Contents>
+      <Posted datetime={entry.posted} />
+      <Body>
+        <div dangerouslySetInnerHTML={{__html: entry.body}}/>
+      </Body>
+      <Photoset>
+        {entry.photos && entry.photos.map(({caption, url}) => (
+          <Photo key={url} alt={caption} src={url}/>
+        ))}
+      </Photoset>
+      <TagSet>
+        {entry.tags && entry.tags.map(
+          tag => (<Tag as="li" key={tag}>{tag}</Tag>))}
+      </TagSet>
+  </Contents>
   </Card>
 );
 

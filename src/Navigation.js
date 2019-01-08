@@ -6,8 +6,13 @@ import { Link as BaseLink } from 'react-router-dom';
 import Card from './Card';
 import Tag from './Tag';
 
+const Count = styled(Tag)`
+  margin-left: 0.5em;
+`;
+
 const Nav = styled(Card)`
   height: 100%;
+  padding: 1em;
 `;
 
 const Link = styled(BaseLink)`
@@ -75,7 +80,7 @@ const tags = (es) => {
 const SearchLink = ({to, label, count}) => (
   <SearchItem>
     <Link to={to}>{label}</Link>
-    <Tag>{count}</Tag>
+    <Count>{count}</Count>
   </SearchItem>);
 
 const Navigation = ({entries, className}) => (
