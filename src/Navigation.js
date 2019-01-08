@@ -1,25 +1,36 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-import { ReactComponent as Logo } from './logo.svg';
+import { ReactComponent as BaseLogo } from './logo.svg';
+import { Link as BaseLink } from 'react-router-dom';
+import Card from './Card';
+import Tag from './Tag';
 
-export const Nav = styled.nav`
+const Nav = styled(Card)`
   height: 100%;
-  border: 1px solid #00000070;
-  border-radius: 4px;
-  padding: 1em;
-  margin-right: 1em;
-  background-color: white;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  h1 {
-    white-space: nowrap;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .logo path {
+`;
+
+const Link = styled(BaseLink)`
+  color: inherit;
+  text-decoration: none;
+`;
+
+const Header = styled.h1`
+  white-space: nowrap;
+`;
+
+const SearchList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const SearchItem = styled.li`
+  margin: 0.5em 0;
+`;
+
+const Logo = styled(BaseLogo)`
+  path {
     opacity:1;
     fill:#65C4FF;
     fill-opacity:1;
@@ -32,33 +43,55 @@ export const Nav = styled.nav`
   }
 `;
 
-const collectPosted = (es) => {
-  let months = new Set();
-  es.forEach(e => months.add(moment(e.posted).format("MMMM YYYY")));
-  return Array.from(months);
+const posted = (es) => {
+  let months = {};
+
+  es.forEach(e => {
+    const time = moment(e.posted);
+    const label = time.format("MMMM YYYY");
+    const count = months[label] ? months[label].count + 1 : 1;
+    months[label] = { count, month: time.month(), year: time.year() };
+  });
+  return Object.entries(months).map(
+    ([label, m]) =>
+      (<SearchLink key={label}
+                   to={`/entries?month=${m.month}&year=${m.year}`}
+                   label={label}
+                   count={m.count} />));
 }
 
-const collectTags = (es) => {
-  let tags = new Set();
-  es.forEach(e =>
-             e.tags && e.tags.forEach(t => tags.add(t)));
-  return Array.from(tags);
-}
+const tags = (es) => {
+  let tags = {};
+  es.forEach(e => e.tags && e.tags.forEach(t => tags[t] = (tags[t] || 0) + 1));
 
-const Navigation = ({entries}) => (
-  <Nav>
+  return Object.entries(tags).map(
+    ([tag, count]) =>
+      (<SearchLink key={tag}
+                   to={`/entries?tag=${tag}`}
+                   label={tag}
+                   count={count}/>));
+};
+
+const SearchLink = ({to, label, count}) => (
+  <SearchItem>
+    <Link to={to}>{label}</Link>
+    <Tag>{count}</Tag>
+  </SearchItem>);
+
+const Navigation = ({entries, className}) => (
+  <Nav as="nav" className={className}>
     <Logo />
-    <h1 style={{whiteSpace:"no-wrap"}} >Ashton's Projects</h1>
+    <Header><Link to="/entries">Ashton's Projects</Link></Header>
     <hr/>
     <h2>Tags</h2>
-    <ul>
-      {collectTags(entries).map(t => <li key={t}>{t}</li>)}
-    </ul>
+    <SearchList>
+      {tags(entries)}
+    </SearchList>
     <hr/>
     <h2>Posted</h2>
-    <ul>
-      {collectPosted(entries).map(t => <li key={t}>{t}</li>)}
-    </ul>
+    <SearchList>
+      {posted(entries)}
+    </SearchList>
   </Nav>
 );
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Entry from './Entry';
 import moment from 'moment';
 import styled from 'styled-components';
-import { Nav } from './Navigation';
 import { ReactComponent as Logo } from './logo.svg';
 
 import {
@@ -56,7 +55,7 @@ class Search extends Component {
           apiKey="36aafccbdf557d9165097ac728ecedc4"
           indexName="ashton.snelgrove.science">
           <div style={{display:"flex"}}>
-            <Nav>
+            <nav>
               <Logo />
               <h1 style={{whiteSpace:"no-wrap"}} >Ashton's Projects</h1>
               <SearchBox />
@@ -70,7 +69,7 @@ class Search extends Component {
                 <Menu attribute="posted_month" transformItems={monthLabels}/>
               </div>
               <Configure hitsPerPage={8} />
-            </Nav>
+            </nav>
             <main>
               <Hits hitComponent={Hit} />
               <Pagination />

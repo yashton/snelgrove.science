@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import axios from 'axios';
-import Entry from './Entry';
-import Navigation from './Navigation';
+import { default as BaseEntry } from './Entry';
+import moment from 'moment';
+import { default as BaseNavigation } from './Navigation';
 import styled from 'styled-components';
 import { compose } from 'recompose';
 import { Route, Switch } from 'react-router-dom';
@@ -11,7 +12,24 @@ const decrementLoading = (s) => ({ ...s, loading: s.loading - 1 });
 
 const Contents = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin: 1em;
+`;
+
+const Main = styled.main`
+  flex-grow: 7;
+  flex-basis: 10em;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Navigation = styled(BaseNavigation)`
+  flex-grow: 1;
+  width: 10em;
+`;
+
+const Entry = styled(BaseEntry)`
+  width: 24em;
 `;
 
 class EntryList extends React.Component {
@@ -43,37 +61,52 @@ class EntryList extends React.Component {
 
   render() {
     const {loading, entries} = this.state;
-    const sorted = [...entries].sort((a, b) => -a.posted.localeCompare(b.posted));
     if (loading) return null;
     return (
       <Contents>
         <Navigation entries={entries}/>
-        <main>
+        <Main>
           <Switch>
             <Route
               path="/entries/:entry"
-              render={p =>
-                (<SingleEntry entry={p.match.params.entry} entries={entries}/>)}/>
+              render={({match: { params: { entry }}}) =>
+                      (<Entries entries={entries} filter={single(entry)}/>)}/>
             <Route
-              render={p =>
-                (<MultipleEntry entries={sorted}/>)}/>
+              path="/entries"
+              render={({location: { search }}) =>
+                      (<Entries entries={entries} filter={parse(search)}/>)}/>
           </Switch>
-        </main>
+        </Main>
       </Contents>
     );
   }
 }
 
-const SingleEntry = (props) => {
-  const found = props.entries.find(e => props.entry === e.objectID);
-  if (!found) return (<span>Whoops missing {props.entry}</span>);
-  return (<Entry entry={found}/>);
+const parse = search => {
+  const params = new URLSearchParams(search);
+  console.log("search", params.toString());
+  let filters = [];
+  if (params.has("tag")) {
+    console.log(params.getAll("tag"));
+    params.getAll("tag").forEach(t => filters.push(e => e.tags.some(u => u === t)));
+  }
+  if (params.has("year"))
+    filters.push(e => moment(e.posted).year() === parseInt(params.get("year")));
+  if (params.has("month"))
+    filters.push(e => moment(e.posted).month() === parseInt(params.get("month")));
+  console.log(filters);
+  return filters.reduce((a, c) => e => a(e) && c(e), () => true);
 };
 
-const MultipleEntry = (props) => (
-  <Fragment>
-    {props.entries.map(e => <Entry key={e.objectID} entry={e}/>)}
-  </Fragment>
-);
+const single = id => entry => id === entry.objectID;
+
+const Entries = ({filter, entries}) => {
+  const sort = (a, b) => -a.posted.localeCompare(b.posted);
+  return (
+    <Fragment>
+      {[...entries].filter(filter).sort(sort).map(e => <Entry key={e.objectID} entry={e}/>)}
+    </Fragment>
+  );
+};
 
 export default EntryList;
