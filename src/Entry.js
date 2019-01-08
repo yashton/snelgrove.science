@@ -32,6 +32,11 @@ const PostedStyle = styled.time`
   display: block;
 `;
 
+const Body = styled.div`
+  max-height: 100em;
+  text-overflow: ellipsis;
+`;
+
 const Posted = ({datetime}) =>
       (<PostedStyle dateTime={datetime}>{moment(datetime).format("LLL")}</PostedStyle>);
 
@@ -42,7 +47,9 @@ const Entry = ({entry, className}) => (
         {entry.title || "MISSING"}
       </Link>
     </EntryHeader>
-    <p dangerouslySetInnerHTML={{__html: entry.body}}/>
+    <Body>
+      <div dangerouslySetInnerHTML={{__html: entry.body}}/>
+    </Body>
     <Photoset>
       {entry.photos && entry.photos.map(({caption, url}) => (
         <Photo key={url} alt={caption} src={url}/>
