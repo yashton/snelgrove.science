@@ -17,6 +17,9 @@ const Contents = styled.div`
   margin: 1em;
 `;
 
+const Main = styled.main`
+`;
+
 const Navigation = styled(BaseNavigation)`
   width: 16em;
 `;
@@ -58,7 +61,7 @@ class Blog extends React.Component {
     return (
       <Contents>
         <Navigation entries={entries}/>
-        <main>
+        <Main>
           <Switch>
             <Route
               path="/entries/:entry"
@@ -68,8 +71,12 @@ class Blog extends React.Component {
               path="/entries"
               render={({location: { search }}) =>
                       (<Entries entries={entries} filter={parse(search)}/>)}/>
+            <Route
+              path="/"
+              render={({location: { search }}) =>
+                      (<Entries entries={entries} filter={parse(search)}/>)}/>
           </Switch>
-        </main>
+        </Main>
       </Contents>
     );
   }
