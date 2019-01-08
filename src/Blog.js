@@ -24,7 +24,7 @@ const Navigation = styled(BaseNavigation)`
   width: 16em;
   position: -webkit-sticky;
   position: sticky;
-  top: 4em;
+  top: 1em;
 `;
 
 const Entry = styled(BaseEntry)`
