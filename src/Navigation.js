@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-import { ReactComponent as BaseLogo } from './logo.svg';
+import { ReactComponent as BaseLogo } from './logo/logomin.svg';
 import { Link as BaseLink } from 'react-router-dom';
 import Card from './Card';
 import Tag from './Tag';

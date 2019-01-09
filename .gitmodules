@@ -1,3 +1,6 @@
 [submodule "Metropolis"]
 	path = Metropolis
 	url = https://github.com/chrismsimpson/Metropolis.git
+[submodule "src/logo"]
+	path = src/logo
+	url = https://github.com/yashton/logo.git
