@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { default as BaseEntry } from './Entry';
+import Entry from './Entry';
 import styled from 'styled-components';
 
-const Entry = styled(BaseEntry)`
-  width: 40em;
+const EntryContainer = styled.div`
+  max-width: 40em;
 `;
 
 class Entries extends React.Component {
@@ -34,7 +34,8 @@ class Entries extends React.Component {
     const sort = (a, b) => -a.posted.localeCompare(b.posted);
     return (
       <Fragment>
-        {[...entries].filter(filter).sort(sort).slice(0, count).map(e => <Entry key={e.objectID} entry={e}/>)}
+        {[...entries].filter(filter).sort(sort).slice(0, count).map(
+          e => <EntryContainer><Entry key={e.objectID} entry={e}/></EntryContainer>)}
       </Fragment>
     );
   }

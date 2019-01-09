@@ -2,8 +2,12 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Card from './Card';
+import { default as BaseCard } from './Card';
 import Tag from './Tag';
+
+const Card = styled(BaseCard)`
+  width: 100%;
+`;
 
 const Contents = styled.div`
   padding: 0.5em 2.5em 2.5em 2.5em;
