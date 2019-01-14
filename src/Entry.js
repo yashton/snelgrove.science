@@ -7,6 +7,7 @@ import Tag from './Tag';
 
 const Card = styled(BaseCard)`
   width: 100%;
+  margin: 1.5em 0em;
 `;
 
 const Contents = styled.div`
