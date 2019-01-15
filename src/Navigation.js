@@ -3,15 +3,38 @@ import moment from 'moment';
 import styled from 'styled-components';
 import { ReactComponent as BaseLogo } from './logo/logomin.svg';
 import { Link as BaseLink } from 'react-router-dom';
-import Card from './Card';
-import Tag from './Tag';
+import * as colors from './colors';
 
-const Count = styled(Tag)`
-  margin-left: 0.5em;
+const Count = styled.span`
+  color: ${colors.primary4};
+  background-color: ${colors.primary2};
+  display: inline;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  text-align: center;
+  font-size: smaller;
+  font-family: 'Exo 2';
+  margin-left: 0.6em;
 `;
 
-const Nav = styled(Card)`
+const Nav = styled.nav`
+  border-radius: 6px;
+  margin: 1.5em;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 100%;
+  background-color: ${colors.primary1};
+  color: ${colors.primary4};
+`;
+
+const Top = styled.div`
+  border-radius: 6px 6px 0px 0px;
+  padding: 1em;
+  background-color: ${colors.primary0};
+  color: ${colors.primary1};
+`;
+
+const Links = styled.div`
   padding: 1em;
 `;
 
@@ -20,8 +43,14 @@ const Link = styled(BaseLink)`
   text-decoration: none;
 `;
 
+const ExternalLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+`;
+
 const Header = styled.h1`
   white-space: nowrap;
+  text-transform: uppercase;
 `;
 
 const SearchList = styled.ul`
@@ -31,13 +60,13 @@ const SearchList = styled.ul`
 `;
 
 const SearchItem = styled.li`
-  margin: 0.5em 0;
+  margin: 0.6em 0;
 `;
 
 const Logo = styled(BaseLogo)`
   path {
     opacity:1;
-    fill:#65C4FF;
+    fill: ${colors.primary1};
     fill-opacity:1;
     fill-rule:evenodd;
     stroke:none;
@@ -84,23 +113,31 @@ const SearchLink = ({to, label, count}) => (
   </SearchItem>);
 
 const Navigation = ({entries, className}) => (
-  <Nav as="nav" className={className}>
-    <Logo />
-    <Header><Link to="/entries">Ashton's Projects</Link></Header>
-    <hr/>
-    <h2>Tags</h2>
-    <SearchList>
-      {tags(entries)}
-    </SearchList>
-    <hr/>
-    <h2>Posted</h2>
-    <SearchList>
-      {posted(entries)}
-    </SearchList>
-    <hr/>
-    <a href="https://www.linkedin.com/in/ashtonsnelgrove/">LinkedIn</a>
-    <a href="https://www.snelgrove.family/">Snelgrove Family Blogs</a>
-
+  <Nav className={className}>
+    <Top>
+      <Logo />
+      <Header><Link to="/entries">Ashton's Projects</Link></Header>
+    </Top>
+    <Links>
+      <h2>Tags</h2>
+      <SearchList>
+        {tags(entries)}
+      </SearchList>
+      <hr/>
+      <h2>Posted</h2>
+      <SearchList>
+        {posted(entries)}
+      </SearchList>
+      <hr/>
+      <SearchList>
+        <SearchItem>
+          <ExternalLink href="https://www.linkedin.com/in/ashtonsnelgrove/">LinkedIn</ExternalLink>
+        </SearchItem>
+        <SearchItem>
+          <ExternalLink href="https://www.snelgrove.family/">Snelgrove Family Blogs</ExternalLink>
+        </SearchItem>
+      </SearchList>
+</Links>
   </Nav>
 );
 

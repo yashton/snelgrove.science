@@ -2,12 +2,16 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { default as BaseCard } from './Card';
 import Tag from './Tag';
+import * as colors from './colors';
 
-const Card = styled(BaseCard)`
+const Card = styled.div`
   width: 100%;
   margin: 1.5em 0em;
+  border-radius: 6px;
+  margin: 1.5em;
+  background-color: ${colors.primary1};
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 
 const Contents = styled.div`
@@ -15,10 +19,10 @@ const Contents = styled.div`
 `;
 const EntryHeader = styled.h2`
   margin: 0em;
-
-background-color: #cc97f6;
-color: white;
-padding: 1em 1em 1em 2em;
+  background-color: ${colors.secondary3};
+  color: ${colors.secondary1};
+  padding: 1em 1em 1em 2em;
+  border-radius: 6px 6px 0px 0px;
   a {
     text-decoration: none;
     color: inherit;

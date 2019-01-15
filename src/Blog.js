@@ -21,7 +21,6 @@ const Main = styled.main`
 `;
 
 const Navigation = styled(BaseNavigation)`
-  width: 16em;
 `;
 
 class Blog extends React.Component {
