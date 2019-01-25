@@ -7,6 +7,27 @@ import { compose } from 'recompose';
 import { Route, Switch } from 'react-router-dom';
 import Entries from './Entries';
 import dataUrl from '../entries-generator';
+import BaseLogo from './logo/logomin.svg';
+import * as colors from './colors';
+
+const Logo = styled(BaseLogo)`
+  @keyframes fade {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 1.0;
+    }
+  }
+
+  path {
+    animation: 1s infinite alternate fade;
+    fill: ${colors.primary0};
+    fill-rule:evenodd;
+  }
+  height: 50vh;
+  margin: auto;
+`;
 
 const incrementLoading = (s) => ({ ...s, loading: s.loading + 1 });
 const decrementLoading = (s) => ({ ...s, loading: s.loading - 1 });
@@ -46,10 +67,12 @@ class Blog extends React.Component {
 
   render() {
     const {loading, entries} = this.state;
-    if (loading) return null;
+    if (loading > 0) {
+      return <Contents><Logo/><h1>Loading...</h1></Contents>;
+    }
     return (
       <Contents>
-        <Navigation entries={entries}/>
+        <Navigation entries={entries} />
           <Switch>
             <Route
               path="/entries/:entry"
