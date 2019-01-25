@@ -15,13 +15,14 @@ const Card = styled.div`
 `;
 
 const Contents = styled.div`
-  padding: 0.5em 2.5em 2.5em 2.5em;
+  padding: 1.5rem 2.5rem 2.5rem 2.5rem;
 `;
+
 const EntryHeader = styled.h2`
   margin: 0em;
   background-color: ${colors.secondary3};
   color: ${colors.secondary1};
-  padding: 1em 1em 1em 2em;
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
   border-radius: 6px 6px 0px 0px;
   a {
     text-decoration: none;

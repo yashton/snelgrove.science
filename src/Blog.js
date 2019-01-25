@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import { default as BaseNavigation } from './Navigation';
+import Navigation from './Navigation';
 import styled from 'styled-components';
 import { compose } from 'recompose';
 import { Route, Switch } from 'react-router-dom';
 import Entries from './Entries';
+import dataUrl from '../entries-generator';
 
 const incrementLoading = (s) => ({ ...s, loading: s.loading + 1 });
 const decrementLoading = (s) => ({ ...s, loading: s.loading - 1 });
@@ -15,12 +16,6 @@ const Contents = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 1em;
-`;
-
-const Main = styled.main`
-`;
-
-const Navigation = styled(BaseNavigation)`
 `;
 
 class Blog extends React.Component {
@@ -36,8 +31,7 @@ class Blog extends React.Component {
   async componentDidMount() {
     try {
       this.setState(incrementLoading);
-      const { data } = await axios.get('/entries.json',
-                                       { cancelToken: this.cancel.token });
+      const { data } = await axios.get(dataUrl, { cancelToken: this.cancel.token });
       const update = (s) => ({ ...s, entries: data });
       this.setState(compose(decrementLoading, update));
     } catch (e) {
@@ -56,7 +50,6 @@ class Blog extends React.Component {
     return (
       <Contents>
         <Navigation entries={entries}/>
-        <Main>
           <Switch>
             <Route
               path="/entries/:entry"
@@ -70,7 +63,6 @@ class Blog extends React.Component {
               render={({location: { search }}) =>
                       (<Entries entries={entries} filter={()=>true}/>)}/>
           </Switch>
-        </Main>
       </Contents>
     );
   }

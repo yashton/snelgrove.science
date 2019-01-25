@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-import { ReactComponent as BaseLogo } from './logo/logomin.svg';
+import BaseLogo from './logo/logomin.svg';
 import { Link as BaseLink } from 'react-router-dom';
 import * as colors from './colors';
 
@@ -137,7 +137,7 @@ const Navigation = ({entries, className}) => (
           <ExternalLink href="https://www.snelgrove.family/">Snelgrove Family Blogs</ExternalLink>
         </SearchItem>
       </SearchList>
-</Links>
+    </Links>
   </Nav>
 );
 

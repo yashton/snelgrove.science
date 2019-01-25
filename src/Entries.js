@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Entry from './Entry';
 import styled from 'styled-components';
 
@@ -33,10 +33,10 @@ class Entries extends React.Component {
     const { count } = this.state;
     const sort = (a, b) => -a.posted.localeCompare(b.posted);
     return (
-      <Fragment>
+      <main>
         {[...entries].filter(filter).sort(sort).slice(0, count).map(
           e => <EntryContainer><Entry key={e.objectID} entry={e}/></EntryContainer>)}
-      </Fragment>
+      </main>
     );
   }
 };
