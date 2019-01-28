@@ -35,7 +35,7 @@ class Entries extends React.Component {
     return (
       <main>
         {[...entries].filter(filter).sort(sort).slice(0, count).map(
-          e => <EntryContainer><Entry key={e.objectID} entry={e}/></EntryContainer>)}
+          e => <EntryContainer key={e.objectID}><Entry entry={e}/></EntryContainer>)}
       </main>
     );
   }
