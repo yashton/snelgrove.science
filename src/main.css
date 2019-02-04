@@ -2,3 +2,7 @@ body {
     font-family: Metropolis, 'Exo 2', sans-serif;
     background-color: #E1E5FD;
 }
+
+img {
+  image-orientation: from-image;
+}
